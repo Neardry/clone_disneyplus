@@ -9,6 +9,10 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
         display: none;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
         
         &--is-active {
             display: grid;
@@ -24,6 +28,12 @@
     &__tabs{
         display: flex;
         justify-content: center;
+
+        @media (max-width: 768px) {
+            white-space: nowrap; /* Faz com que os textos se obriguem a ficar em uma linha, mesmo que isso cause uma rolagem (porém a rolagem será aprenas neste elemento de texto) */
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
         &__button{
             border: none; /* removendo bordas para colocar a nossa */
             color: variaveis.$corTextoSecundario;
@@ -37,7 +47,12 @@
 
             &--is-active {
                 border-color: variaveis.$corTextoSecundario;
-                transition:  ease 1s;
+                transition: ease 1s;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+
             }
         }
     }
